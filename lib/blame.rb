@@ -4,13 +4,13 @@ module Blame
       base.alias_method_chain :create, :userstamps
       base.alias_method_chain :update, :userstamps
 
-      base.class_inheritable_accessor :record_userstamps, :instance_writer => false
+      base.class_attribute :record_userstamps, :instance_writer => false
       base.record_userstamps = true
 
-      base.class_inheritable_accessor :created_userstamp_column, :instance_writer => false
+      base.class_attribute :created_userstamp_column, :instance_writer => false
       base.created_userstamp_column = :created_by
 
-      base.class_inheritable_accessor :updated_userstamp_column, :instance_writer => false
+      base.class_attribute :updated_userstamp_column, :instance_writer => false
       base.updated_userstamp_column = :updated_by
     end
 
